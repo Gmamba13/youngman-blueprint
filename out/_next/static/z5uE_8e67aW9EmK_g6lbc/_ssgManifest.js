@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fpillars\u002F[slug]","\u002Fpillars\u002F[slug]\u002Fcheckin"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+html, body {
+  background: #F7F7F7;
+  color: #0D0D0D;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+@layer components {
+  /* Clean white card with soft shadow */
+  .card {
+    @apply bg-elevated rounded-4xl p-5;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  /* Chip label */
+  .chip {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold
+           bg-stone text-secondary border border-border;
+  }
+
+  /* Primary button — black */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full
+           font-semibold text-sm tracking-wide transition active:scale-95;
+    background: #0D0D0D;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full
+           bg-elevated text-primary font-semibold text-sm border border-border transition active:scale-95;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  /* Section label */
+  .label {
+    @apply text-[10px] uppercase tracking-[0.22em] text-secondary;
+  }
+}

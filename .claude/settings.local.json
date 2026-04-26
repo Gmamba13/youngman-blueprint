@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(curl -s -o /dev/null -w \"Server: %{http_code}\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/pillars/finances/checkin)",
+      "Bash(npm install:*)",
+      "Bash(npm list *)",
+      "Bash(npm run *)",
+      "Bash(npx cap *)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(lsof -i :3000 -sTCP:LISTEN)",
+      "Bash(convert --version)",
+      "Bash(node scripts/generate-icon.mjs)"
+    ]
+  }
+}
