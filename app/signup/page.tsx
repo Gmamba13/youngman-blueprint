@@ -39,7 +39,7 @@ function SignupForm() {
     setLoading(true);
     try {
       const supabase = createClient();
-      const { error: signUpError } = await supabase.auth.signUp({
+      const { data, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
         options: {
@@ -48,6 +48,9 @@ function SignupForm() {
       });
       if (signUpError) {
         setError(signUpError.message);
+      } else if (data.user && data.user.identities && data.user.identities.length === 0) {
+        // Supabase returns a fake user with empty identities[] when email already exists.
+        setError("An account with this email already exists. Try signing in instead.");
       } else {
         setSuccess(true);
       }
